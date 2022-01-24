@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col mt-2">
+        <div class="card ">
+    
+           
+            <div class="submit-form">
+                <div *ngIf="!submitted">
+                    <div class="form-groupe">
+                        <label> Titre Pfe</label>
+                        <input type="text" class="form-control" id="titre" required 
+                        [(ngModel)]="pfe.titre" name="titre"/>                
+                    </div>
+                    <div class="form-groupe">
+                        <label> Type de Pfe</label>
+                        <select   class="form-control"  name="categorie" id="categorie" required 
+                            [(ngModel)]="pfe.categorie" >
+                            <option [ngValue]="null" disabled>--choix type de Pfe--</option>
+                            <option *ngFor="let categorie of categories" [ngValue]="categorie">{{categorie.id}}{{categorie.type}}</option>
+                        </select>
+                     </div>
+                    <button type="submit"(click)="savePfe()" class="btn btn-succes" >Ajouter un Pfe</button>
+                </div>
+        
+                <!--<div *ngIf="submitted">
+                    <h4>Pfe was submitted successfully!</h4>
+                    <button class="btn btn-success" (click)="newPfe()">Add</button>
+                </div>-->
+            </div>
+              
+         </div>
+    
+    </div>
+</div> 
